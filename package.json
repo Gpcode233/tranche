@@ -6,21 +6,44 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint app components lib",
+    "test": "hardhat test",
+    "compile": "hardhat compile",
+    "chain": "hardhat node",
+    "seed": "hardhat run scripts/local.ts --network localhost",
+    "verify:mainnet": "hardhat compile && tsx scripts/verify-mainnet.ts",
+    "deploy": "hardhat run scripts/deploy.ts",
+    "keeper": "hardhat run scripts/keeper.ts"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.108.4",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "next": "16.4.6",
+    "ox": "^1.8.21",
+    "radix-ui": "^1.8.1",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "tailwind-merge": "^3.7.1",
+    "viem": "^2.58.6",
+    "wagmi": "^3.7.11"
   },
   "devDependencies": {
+    "@nomicfoundation/hardhat-network-helpers": "^3.0.12",
+    "@nomicfoundation/hardhat-node-test-runner": "^3.1.2",
+    "@nomicfoundation/hardhat-viem": "^3.1.0",
+    "@nomicfoundation/hardhat-viem-assertions": "^3.1.5",
+    "@openzeppelin/contracts": "^5.6.1",
     "@tailwindcss/turbopack": "4.3.3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.4.6",
+    "hardhat": "^3.22.0",
     "tailwindcss": "4.3.3",
+    "tsx": "^4.23.15",
     "typescript": "^5"
-  }
+  },
+  "type": "module"
 }
